@@ -1,6 +1,16 @@
 <template>
     <div class="flight-list">
-      <h2>Available Flights</h2>
+      <div class="travel-heading">
+        <h2>Available Flights</h2>
+        <div class="flights-question">
+            <h3>Choose a departuring point:</h3>
+            <select>
+                <option value="1">O.R Tambo International</option>
+                <option value="2">Cape Town International</option>
+                <option value="3">King Shaka International</option>
+            </select>
+        </div>
+      </div>
       <div v-for="(flight, index) in availableFlights" :key="index" class="flight-card">
         <p><strong>Date:</strong> {{ flight.date }}</p>
         <p><strong>Departure:</strong> {{ flight.departure }}</p>
@@ -13,28 +23,25 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        availableFlights: [
-          { date: '2024-04-20', departure: 'O.R Tambo International', destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
-          { date: '2024-04-20', departure: 'King Shaka International', destination: 'Cape Town International', departureTime: '11:00 AM', arrivalTime: '02:00 PM', availableSeats: 0 },
-          { date: '2024-04-20', departure: 'Cape Town International', destination: 'O.R Tambo International', departureTime: '01:00 PM', arrivalTime: '05:00 PM', availableSeats: 10 },
-          // Add more flights here
-        ]
-      };
-    },
-    methods: {
-      book(flight) {
-        const msg = 'Booking successful for ' + flight.departure + ' to ' + flight.destination + '!';
-        console.log('Booking:', flight);
-        // Example: You may want to send a request to book this flight
-        // Example: Decrease the availableSeats for this flight
-        flight.availableSeats--; // Decrease available seats by 1
-      }
-    }
-  };
+  <script>    
+    const ORT = 'O.R Tambo International';
+    const CPT = 'Cape Town International';
+    const DUR = 'King Shaka International';
+
+    export default {
+        data() {
+            return {
+                availableFlights: [
+                { date: '02/11/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                { date: '2024-04-20', departure: CPT, destination: 'Cape Town International', departureTime: '11:00 AM', arrivalTime: '02:00 PM', availableSeats: 0 },
+                { date: '05/05/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                { date: '2024-04-20', departure: DUR, destination: 'o.r tambo international', departuretime: '01:00 pm', arrivaltime: '05:00 pm', availableseats: 10 },
+                { date: '07/10/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                // Add more flights here
+                ]
+            };
+        }
+};
   </script>
   
   <style scoped>
@@ -65,6 +72,21 @@
   
   .book-button:hover {
     background-color: #45a049;
+  }
+
+  .travel-heading {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .flights-question {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 10px 0;
   }
   </style>
   
