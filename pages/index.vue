@@ -1,3 +1,3 @@
 <template>
-  <h1>Hello worldlclsmc!</h1>
+  <h1>Ubuntu Travel</h1>
 </template>
