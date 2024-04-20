@@ -8,12 +8,6 @@
         <label for="basic-url" class="form-label">Origin</label>
         <div class="input-group">
           <span class="input-group-text" id="basic-addon3">Origin</span>
-          <!-- <input
-            type="text"
-            class="form-control"
-            id="basic-url"
-            aria-describedby="basic-addon3 basic-addon4"
-          /> -->
           <select class="form-select" aria-label="Default select example">
             <option value="1">O.R Tambo International</option>
             <option value="2">Cape Town International</option>
@@ -27,12 +21,6 @@
         <label for="basic-url" class="form-label">Destination</label>
         <div class="input-group">
           <span class="input-group-text" id="basic-addon3">Destination</span>
-          <!-- <input
-            type="text"
-            class="form-control"
-            id="basic-url"
-            aria-describedby="basic-addon3 basic-addon4" -->
-          <!--/> -->
           <select class="form-select" aria-label="Default select example">
             <option value="1">O.R Tambo International</option>
             <option value="2">Cape Town International</option>
