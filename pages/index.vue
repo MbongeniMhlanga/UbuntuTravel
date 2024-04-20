@@ -8,7 +8,7 @@
         <label for="basic-url" class="form-label">Origin</label>
         <div class="input-group">
           <span class="input-group-text" id="basic-addon3">Origin</span>
-          <select class="form-select"  aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example">
             <option value="1">O.R Tambo International</option>
             <option value="2">Cape Town International</option>
             <option value="3">King Shaka International</option>
