@@ -57,6 +57,20 @@
         </div>
       </div>
     </div>
+
+    <div class="input-group mb-3">
+      <label> To </label>
+
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Recipient's username"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+    </div>
+
+    <NuxtLink to="/about">About</NuxtLink>
     <div>
       <button class="btn btn-outline-primary">
         <NuxtLink to="/travel">Book</NuxtLink>
