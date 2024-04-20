@@ -29,55 +29,39 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="input-group mb-3 row">
+          <label class="form-label col-2"> From </label>
 
-    <!-- CHECK BOX FOR RETURN FLIGHT
-    <div class="input-group">
-      <div class="input-group-text">
-        <input
-          class="form-check-input mt-0"
-          type="radio"
-          value=""
-          aria-label="Radio button for following text input"
-        />
+          <input
+            type="date"
+            class="form-control offset-1"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+        </div>
       </div>
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with radio button"
-      />
-    </div> -->
+      <div class="col-6">
+        <div class="input-group mb-3 row">
+          <label class="form-label col-2"> To </label>
 
-    <div class="input-group mb-3">
-      <label> From </label>
-
-      <input
-        type="date"
-        class="form-control"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-      />
+          <input
+            type="date"
+            class="form-control offset-1"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+        </div>
+      </div>
     </div>
-
-    <div class="input-group mb-3">
-      <label> To </label>
-
-      <input
-        type="date"
-        class="form-control"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-      />
-    </div>
-
     <div>
-      <button>
-        <NuxtLink to="/book">Book</NuxtLink>
+      <button class="btn btn-outline-primary">
+        <NuxtLink to="/travel">Book</NuxtLink>
       </button>
     </div>
-
-    <NuxtLink to="/about">About</NuxtLink>
   </div>
   <!-- <button type="button" class="btn btn-secondary">About</button> -->
 </template>
