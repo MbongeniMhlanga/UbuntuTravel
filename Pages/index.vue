@@ -73,7 +73,7 @@
 
     <div>
       <button>
-        <NuxtLink to="/book">Book</NuxtLink>
+        <NuxtLink to="/{id}">Book</NuxtLink>
       </button>
     </div>
 
