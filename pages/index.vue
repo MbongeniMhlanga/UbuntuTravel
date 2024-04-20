@@ -70,12 +70,6 @@
       />
     </div>
 
-    <!-- <div>
-      <button>
-        <NuxtLink to="/{id}">Book</NuxtLink>
-      </button>
-    </div> -->
-
     <NuxtLink to="/about">About</NuxtLink>
     <div>
       <button class="btn btn-outline-primary">
