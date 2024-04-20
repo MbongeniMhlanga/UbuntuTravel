@@ -1,77 +1,70 @@
-import jsonData from '@/data/data.json';
-
 <template>
-    <div>
-      <h1>Travel</h1>
-      <FlightList :data="data" />
-      <table>
-        <thead>
-          <tr>
-            <th>Flight No</th>
-            <th>Airline Name</th>
-            <th>Departure Place</th>
-            <th>Departure Time</th>
-            <th>Arrival Place</th>
-            <th>Arrival Time</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in data" :key="item.flightNo">
-            <td>{{ item.flightNo }}</td>
-            <td>{{ item.airlineName }}</td>
-            <td>{{ item.departurePlace }}</td>
-            <td>{{ item.departureTime }}</td>
-            <td>{{ item.arrivalPlace }}</td>
-            <td>{{ item.arrivalTime }}</td>
-            <td>{{ item.price }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="flight-list">
+      <h2>Available Flights</h2>
+      <div v-for="(flight, index) in availableFlights" :key="index" class="flight-card">
+        <p><strong>Date:</strong> {{ flight.date }}</p>
+        <p><strong>Departure:</strong> {{ flight.departure }}</p>
+        <p><strong>Destination:</strong> {{ flight.destination }}</p>
+        <p><strong>Departure Time:</strong> {{ flight.departureTime }}</p>
+        <p><strong>Arrival Time:</strong> {{ flight.arrivalTime }}</p>
+        <p><strong>Available Seats:</strong> {{ flight.availableSeats }}</p>
+        <button v-if="flight.availableSeats > 0" @click="book(flight)" class="book-button">Book</button>
+      </div>
     </div>
   </template>
   
   <script>
-  import FlightList from './FlightList.vue'; // Import FlightList component
-  import jsonData from '@/data/data.json'; // Import JSON data
-  
   export default {
-    components: {
-      FlightList
-    },
     data() {
       return {
-        data: [] // Initialize data as an empty array
+        availableFlights: [
+          { date: '2024-04-20', departure: 'O.R Tambo International', destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+          { date: '2024-04-20', departure: 'King Shaka International', destination: 'Cape Town International', departureTime: '11:00 AM', arrivalTime: '02:00 PM', availableSeats: 0 },
+          { date: '2024-04-20', departure: 'Cape Town International', destination: 'O.R Tambo International', departureTime: '01:00 PM', arrivalTime: '05:00 PM', availableSeats: 10 },
+          // Add more flights here
+        ]
       };
     },
-    mounted() {
-      // Simulate fetching data from external source
-      // Replace this with your actual fetch request
-      // fetch('/', {
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   }
-      // })
-      // .then(response => response.json())
-      // .then(data => {
-      //   this.data = data; // Assign fetched data to the component data
-      // })
-      // .catch(error => {
-      //   console.error('Error fetching data:', error);
-      // });
-      
-      // Simulated data processing (replace with actual data processing)
-      this.data = jsonData.map(item => ({
-        flightNo: item.flightNo,
-        airlineName: item.airlineName,
-        departurePlace: item.departurePlace,
-        departureTime: item.departureTime,
-        arrivalPlace: item.arrivalPlace,
-        arrivalTime: item.arrivalTime,
-        price: item.price
-      }));
+    methods: {
+      book(flight) {
+        const msg = 'Booking successful for ' + flight.departure + ' to ' + flight.destination + '!';
+        console.log('Booking:', flight);
+        // Example: You may want to send a request to book this flight
+        // Example: Decrease the availableSeats for this flight
+        flight.availableSeats--; // Decrease available seats by 1
+      }
     }
   };
   </script>
+  
+  <style scoped>
+  .flight-list {
+    margin-top: 20px;
+  }
+  
+  .flight-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .book-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .book-button:hover {
+    background-color: #45a049;
+  }
+  </style>
   
