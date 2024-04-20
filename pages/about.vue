@@ -1,21 +1,29 @@
 <template>
-    <div>
-      <h1>About Page</h1>
-      <p>
-        This page is rendered on the <strong>{{ rendering }}</strong>
-      </p>
-      <p v-if="rendering === 'server'">
-        First load or hard refresh is done on server side.
-      </p>
-      <p v-if="rendering === 'client'">Navigation is done on client side.</p>
-      <ul>
-        <li>Refresh the page for server side rendering.</li>
-        <li>Click the links to see client side rendering.</li>
-      </ul>
-      <NuxtLink to="/"> Home page </NuxtLink>
-    </div>
-  </template>
-  
-  <script setup>
+    <div class="container py-5">
+        <h1 class="mb-4">About Ubuntu Travel</h1>
+        <div class="row">
+            <div class="col-mod-6">
 
-  </script>
+                <h2> Welcome to our travel app</h2>
+                <p class="lead">Your one-stop destination for all your travel needs.</p>
+                <p>
+                    Our travel app makes it easy to plan trips, book flights, reserve accomodation, and much more-all
+                    from one convinient location. We aim to simplify your travel planning process with a user-friendly
+                    interface and powerful features
+                </p>
+                <p>Join us and start exploring the world with ease and comfort</p>
+
+            </div>
+
+            <div class="col md-6">
+                <img src="/assets/images/about-travel.jpg" alt="About our app" class="img-fluid rounded">
+            </div>
+
+        </div>
+        <NuxtLink to="/" class="link-underline-danger"> Home page </NuxtLink>
+    </div>
+</template>
+
+<script setup>
+
+</script>
