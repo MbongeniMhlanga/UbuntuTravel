@@ -4,10 +4,11 @@
         <h2>Available Flights</h2>
         <div class="flights-question">
             <h3>Choose a departuring point:</h3>
-            <select>
-                <option value="1">O.R Tambo International</option>
+            <select v-model="selectDeparture">
+                <option v-for="option in options" :key="option.value" :value="option.value">{{ option.label }}</option>
+                <!-- <option value="1">O.R Tambo International</option>
                 <option value="2">Cape Town International</option>
-                <option value="3">King Shaka International</option>
+                <option value="3">King Shaka International</option> -->
             </select>
         </div>
       </div>
@@ -31,14 +32,25 @@
     export default {
         data() {
             return {
+                selectedDeparture: '',
+                options: [
+                    { value: ORT, label: 'O.R Tambo International' },
+                    { value: CPT, label: 'Cape Town International' },
+                    { value: DUR, label: 'King Shaka International' }
+                ],
                 availableFlights: [
-                { date: '02/11/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
-                { date: '2024-04-20', departure: CPT, destination: 'Cape Town International', departureTime: '11:00 AM', arrivalTime: '02:00 PM', availableSeats: 0 },
-                { date: '05/05/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
-                { date: '2024-04-20', departure: DUR, destination: 'o.r tambo international', departuretime: '01:00 pm', arrivaltime: '05:00 pm', availableseats: 10 },
-                { date: '07/10/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                    { date: '02/11/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                    { date: '2024-04-20', departure: CPT, destination: 'Cape Town International', departureTime: '11:00 AM', arrivalTime: '02:00 PM', availableSeats: 0 },
+                    { date: '05/05/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
+                    { date: '2024-04-20', departure: DUR, destination: 'o.r tambo international', departuretime: '01:00 pm', arrivaltime: '05:00 pm', availableseats: 10 },
+                    { date: '07/10/2024', departure: ORT, destination: 'King Shaka International', departureTime: '09:00 AM', arrivalTime: '12:00 PM', availableSeats: 5 },
                 // Add more flights here
-                ]
+                ],
+                computed : {
+                    filteredOptions() {
+                        return availableFlights.filter(flight => flight.departure === this.selectedDeparture);
+                    }
+                }
             };
         }
 };
