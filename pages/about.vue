@@ -2,7 +2,6 @@
     <NuxtLink to="/"> Home </NuxtLink>
     <div class="container py-5">
         <h1 class="mb-4">About Ubuntu Travel</h1>
-        <!----<h4> Travel Made Easy</h4>-->
         <div class="row">
             <div class="col-mod-6">
                 <h3> ✈️ Welcome to our travel App 🌍</h3>
