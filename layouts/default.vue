@@ -10,6 +10,7 @@
         <nuxt-link to="/" class="font-bold"></nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
+          <li><nuxt-link to="/travel">Book</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
         </ul>
       </nav>
@@ -22,7 +23,7 @@
     </div>
   </div>
   <div id="footer" class="container">
-    <img src="`/assets/background.jpg`" alt="" />
+    <!-- <img src="`/assets/background.jpg`" alt="" /> -->
   </div>
 </template>
 
